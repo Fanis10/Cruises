@@ -1,0 +1,23 @@
+.nav {
+  padding: 50px 0;
+  li {
+    list-style: none;
+    font-size: 20px;
+    line-height: 120%;
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .header {
+    .logo__img {
+      width: 25px;
+      height: 25px;
+    }
+    .logo__text {
+      font-size: 18px;
+    }
+  }
+}

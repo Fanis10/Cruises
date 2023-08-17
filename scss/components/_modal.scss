@@ -1,0 +1,151 @@
+.fancybox__button--thumbs {
+  display: none;
+}
+
+.fancybox__button--fullscreen {
+  display: none;
+}
+
+.fancybox__button--slideshow {
+  display: none;
+}
+
+.fancybox__button--zoom {
+  display: none;
+}
+
+.fancybox__counter {
+  display: none;
+}
+
+.fancybox__thumbs .carousel__slide .fancybox__thumb::after {
+  border-color: $clYellow;
+  border-width: 2px;
+}
+
+@include respond-to("tablet") {
+  .modal-gallery {
+    .fancybox__toolbar {
+      height: 82px;
+      background: $clBlue;
+
+      &:after {
+        @include pseudo("Фотографии");
+        font-family: $font-family-secondary;
+        font-weight: $font-weight-bold;
+        font-size: $szFontMedium;
+        line-height: 150%;
+        color: $clWhite;
+        top: 30px;
+        left: 20px;
+      }
+
+      .fancybox__button--close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+      }
+    }
+
+    .fancybox__counter {
+      display: block;
+      position: fixed;
+      bottom: 17px;
+      left: 21px;
+      font-family: $font-family-secondary;
+      font-weight: $font-weight-primary;
+      font-size: $szFontSmall;
+      line-height: 150%;
+      color: $clBlack;
+      padding: 0;
+      text-align: left;
+    }
+
+    .fancybox__nav .carousel__button.is-next {
+      top: auto;
+      left: auto;
+      right: 20px;
+      bottom: 3px;
+      transform: none;
+      filter: invert(1);
+    }
+
+    .fancybox__nav .carousel__button.is-prev {
+      top: auto;
+      left: auto;
+      right: 86px;
+      bottom: 3px;
+      transform: none;
+      filter: invert(1);
+    }
+
+    .fancybox__thumbs {
+      display: none;
+    }
+
+    .fancybox__viewport {
+      &:after {
+        @include pseudo();
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: $clWhite;
+        box-shadow: 0px 4px 24px rgba(0, 67, 101, 0.08);
+        border-radius: 10px 10px 0px 0px;
+      }
+    }
+  }
+}
+
+.modal-done {
+  max-width: 1070px;
+  width: 100%;
+  padding: 90px 30px 100px;
+  text-align: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  @include respond-to("tablet") {
+    height: 100%;
+    &:before {
+      @include pseudo();
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 92px;
+      background: $clBlue;
+    }
+  }
+  &__header {
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-bold;
+    font-size: $szFontSectionHeader;
+    line-height: 37px;
+    color: $clDarkBlue;
+    margin-bottom: 35px;
+  }
+
+  &__hint {
+    font-weight: $font-weight-primary;
+    font-size: $szFontMedium;
+    line-height: 120%;
+    color: $clBlack;
+  }
+}
+.fancybox__content>.carousel__button.is-close {
+  top: 20px;
+  right: 20px;
+  filter: invert(.4);
+  @include respond-to("tablet") {
+    filter: none;
+    top: 30px;
+  }
+}
+
+@include respond-to("tablet") {
+  .fancybox__slide.has-inline {
+    padding: 0;
+  }
+}

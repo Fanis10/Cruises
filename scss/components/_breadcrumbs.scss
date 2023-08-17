@@ -1,0 +1,40 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  padding: 25px 0;
+
+  @include respond-to("tablet") {
+    padding: 25px 0 20px;
+  }
+
+  &--pb0 {
+    padding-bottom: 0;
+
+    @include respond-to("tablet") {
+      padding-bottom: 10px;
+    }
+  }
+
+  * {
+    font-weight: $font-weight-primary;
+    font-size: $szFontSmall;
+    line-height: 16px;
+    color: $clTextGrey;
+
+    @include respond-to("tablet") {
+      font-size: 11px;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+  }
+  a {
+    &:hover {
+      color: $clDarkBlue;
+    }
+  }
+}

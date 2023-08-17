@@ -1,0 +1,21 @@
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+  }
+
+  &.menuOpened {
+    overflow-y: hidden;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $szContainerWidth;
+  padding: 0 $szContainerPadding;
+}
+

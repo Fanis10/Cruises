@@ -1,0 +1,486 @@
+.reviews {
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__aside {
+    width: 32%;
+
+    @include respond-to("tablet-wide") {
+      width: 100%;
+    }
+  }
+
+  &__company {
+    @include respond-to("tablet-wide") {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .reviews__rate {
+      display: flex !important;
+
+      @include respond-to("tablet-wide") {
+        order: 2;
+      }
+    }
+
+    &-logo {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+
+      @include respond-to("tablet-wide") {
+        order: 3;
+        margin-top: 20px;
+        justify-content: flex-start;
+        margin-bottom: 0;
+      }
+
+      img {
+        max-width: 120px;
+        width: 100%;
+      }
+    }
+
+    &-title {
+      font-family: $font-family-secondary;
+      font-weight: $font-weight-bold;
+      font-size: $szFontCompanyHeader;
+      line-height: 120%;
+      color: $clDarkBlue;
+      margin-bottom: 30px;
+
+      @include respond-to("tablet-wide") {
+        order: 1;
+      }
+    }
+  }
+
+  &__mob {
+    margin-bottom: 20px;
+    display: none;
+
+    @include respond-to("tablet-wide") {
+      display: block;
+    }
+
+    &-title {
+      font-size: $szFontItemHeader;
+    }
+
+    &-rate {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__title {
+    @include respond-to("tablet-wide") {
+      display: none;
+    }
+  }
+
+  &__rate {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include respond-to("tablet-wide") {
+      display: none;
+    }
+
+    &-count {
+      font-weight: $font-weight-primary;
+      font-size: $szFontSmall;
+      line-height: 16px;
+      color: $clBlack;
+    }
+  }
+
+  &__specs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 25px 0 20px;
+    row-gap: 15px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      width: 33%;
+
+      @include respond-to("tablet") {
+        width: 100%;
+      }
+    }
+
+    strong {
+      font-weight: $font-weight-bold;
+      font-size: $szFontSmall;
+      line-height: 120%;
+      color: $clDarkBlue;
+    }
+
+    span {
+      font-weight: $font-weight-primary;
+      font-size: $szFontSmall;
+      line-height: 120%;
+      color: $clBlue;
+    }
+  }
+
+  &__text {
+    font-weight: $font-weight-primary;
+    font-size: $szFontSmall;
+    line-height: 150%;
+    color: $clBlack;
+  }
+
+  &__pick {
+    margin-top: 20px;
+  }
+
+  &__info {
+    background: $clWhite;
+    box-shadow: 0px 4px 24px rgba(0, 24, 83, 0.08);
+    border-radius: 3px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: sticky;
+    top: 100px;
+
+    @include respond-to("tablet-wide") {
+      box-shadow: none;
+      padding: 0;
+    }
+
+    &-header {
+      font-family: $font-family-secondary;
+      font-weight: $font-weight-bold;
+      font-size: $szFontBig;
+      line-height: 120%;
+      color: $clDarkBlue;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $clYellow;
+    }
+
+    &-body {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+
+      @include respond-to("mobile") {
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+
+    &-text {
+      font-weight: $font-weight-primary;
+      font-size: $szFontSmall;
+      line-height: 150%;
+      color: $clTextGrey;
+      margin-top: 10px;
+
+      @include respond-to("tablet-wide") {
+        display: none;
+      }
+    }
+
+    &-links {
+      @include respond-to("tablet-wide") {
+        display: none;
+      }
+    }
+
+    &-companies {
+      .reviews__info-header {
+        @include respond-to("tablet-wide") {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__body {
+    width: 68%;
+    padding-left: 30px;
+
+    @include respond-to("tablet-wide") {
+      width: 100%;
+      padding-top: 10px;
+      padding-left: 0;
+    }
+  }
+
+  &__sort {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    @include respond-to("tablet") {
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+
+    &-title {
+      font-family: $font-family-secondary;
+      font-weight: $font-weight-bold;
+      font-size: $szFontSmall;
+      line-height: 120%;
+      color: $clDarkBlue;
+    }
+
+    &-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 25px;
+
+      @include respond-to("tablet") {
+        width: 100%;
+        row-gap: 10px;
+      }
+    }
+
+    &-item {
+      font-weight: $font-weight-primary;
+      font-size: $szFontSmall;
+      line-height: 120%;
+      color: $clBlue;
+    }
+
+    &-nav {
+      margin-left: auto;
+
+      @include respond-to("tablet") {
+        margin-left: 0;
+        width: 100%;
+        margin-bottom: 25px;
+      }
+
+      .btn {
+        padding: 6px;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0 0;
+  }
+
+
+  &__item {
+    padding: 30px;
+    border-radius: 10px;
+    background: $clLightGrey;
+
+    @include respond-to("tablet") {
+      padding: 30px 20px;
+    }
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      @include respond-to("tablet") {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+      }
+    }
+
+    &-name {
+      font-family: $font-family-secondary;
+      font-weight: $font-weight-bold;
+      font-size: $szFontSmall;
+      line-height: 120%;
+      color: $clDarkBlue;
+    }
+
+    &-rating {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 10px;
+      column-gap: 45px;
+      margin-bottom: 20px;
+
+      @include respond-to("tablet") {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .reviews__rate {
+      display: flex;
+      align-items: center;
+
+      &-title {
+        font-weight: $font-weight-primary;
+        font-size: $szFontSmall;
+        line-height: 24px;
+        color: $clBlack;
+        width: 50%;
+      }
+
+      &-line {
+        width: calc(50% - 30px);
+        height: 4px;
+        background: #E5E7EB;
+
+        &__inner {
+          height: 4px;
+          background: $clYellow;
+        }
+      }
+
+      &-rate {
+        font-weight: $font-weight-primary;
+        font-size: $szFontSmall;
+        line-height: 16px;
+        color: $clBlack;
+        width: 30px;
+        text-align: right;
+      }
+    }
+
+    &-author {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+
+      &__avatar {
+        height: 32px;
+        width: 32px;
+        flex-shrink: 0;
+        display: flex;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 8px;
+        font-weight: $font-weight-primary;
+        font-size: $szFontSmall;
+        line-height: 12px;
+        letter-spacing: 0.2px;
+        color: $clTextGrey;
+      }
+    }
+
+    &-title {
+      font-weight: $font-weight-semibold;
+      font-size: $szFontRegular;
+      line-height: 20px;
+      color: $clBlack;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      font-weight: $font-weight-primary;
+      font-size: $szFontRegular;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: $clBlack;
+    }
+
+
+
+    &-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0 0;
+
+      &--end {
+        justify-content: flex-end;
+      }
+    }
+
+    &-rate {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      &__up {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: $font-weight-primary;
+        font-size: $szFontSmall;
+        color: $clGreen;
+      }
+
+      &__down {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: $font-weight-primary;
+        font-size: $szFontSmall;
+        color: $clRed;
+      }
+    }
+
+    &-answer {
+      padding: 20px 0 0 30px;
+
+      @include respond-to("tablet") {
+        padding-left: 20px;
+      }
+    }
+
+    &-form {
+      max-width: 564px;
+      width: 100%;
+      padding: 15px 0 0;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    &-photos {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 15px;
+
+      &__item {
+        height: 75px;
+        width: 75px;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

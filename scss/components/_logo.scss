@@ -1,0 +1,44 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  &__img {
+    height: 36px;
+    width: 36px;
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-bold;
+    font-size: $szFontLogo;
+    line-height: 32px;
+    color: $clWhite;
+    position: relative;
+
+    &:after {
+      @include pseudo();
+      bottom: -2px;
+      left: 0;
+      right: 2px;
+      height: 1px;
+      background: $clYellow;
+    }
+  }
+
+  &--dark {
+    .logo__text {
+      color: $clBlue;
+    }
+
+    svg {
+      path {
+        stroke: $clBlue;
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  &__rate {
+    font-weight: $font-weight-semibold;
+    font-size: $szFontRegular;
+    line-height: 19px;
+    color: $clBlue;
+  }
+
+  &__view {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    height: 14px;
+    width: 14px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &[data-rate="#{$i}"] {
+      @for $y from 1 through $i {
+        .stars__item {
+          &:nth-child(#{$y}) {
+            svg {
+              path {
+                fill: $clYellow;
+                stroke: $clYellow;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--mobonlyone {
+    @include respond-to("tablet") {
+      @for $i from 2 through 5 {
+        .stars__item {
+          &:nth-child(#{$i}) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &--lg {
+    gap: 15px;
+
+    .stars__rate {
+      font-weight: $font-weight-semibold;
+      font-size: $szFontItemHeader;
+      line-height: 30px;
+    }
+
+    .stars__view {
+      gap: 2px;
+    }
+
+    .stars__item {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &--sm {
+    gap: 15px;
+
+    .stars__rate {
+      font-weight: $font-weight-semibold;
+      font-size: $szFontMedium;
+      line-height: 22px;
+    }
+
+    .stars__view {
+      gap: 2px;
+    }
+
+    .stars__item {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  &--hover {
+    .stars__item {
+      cursor: pointer;
+      &:hover {
+        svg {
+          path {
+            fill: $clYellow;
+            stroke: $clYellow;
+          }
+        }
+        &~ * {
+          svg {
+            path {
+              fill: $clWhite !important;
+              stroke: #E0E0E0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

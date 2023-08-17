@@ -1,0 +1,72 @@
+.infocards {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 25px;
+    @include respond-to("tablet") {
+      row-gap: 15px;
+    }
+  }
+
+  &__item {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    @include respond-to("tablet-wide") {
+      width: 50%;
+    }
+    @include respond-to("mobile") {
+      width: 100%;
+    }
+    &-preview {
+      height: 100px;
+      width: 100px;
+      opacity: 0.9;
+      border-radius: 10px;
+      flex-shrink: 0;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0px 4px 24px rgba(1, 13, 38, 0.08);
+      }
+    }
+
+    &-text {
+      padding-left: 30px;
+      @include respond-to("tablet") {
+        padding-left: 20px;
+      }
+    }
+
+    &-title {
+      font-family: $font-family-secondary;
+      font-weight: $font-weight-bold;
+      font-size: $szFontItemHeader;
+      line-height: 120%;
+      color: $clDarkBlue;
+      margin-bottom: 10px;
+      @include respond-to("tablet") {
+        font-size: $szFontItemHeader-mob;
+      }
+    }
+
+    &-price {
+      font-weight: $font-weight-primary;
+      font-size: $szFontMedium;
+      line-height: 150%;
+      color: $clBlue;
+      span {
+        font-weight: $font-weight-semibold;
+      }
+    }
+    &:hover {
+      .infocards__item-preview {
+        img {
+          box-shadow: 0px 8px 24px rgba(1, 13, 38, 0.3);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+.btn {
+  font-family: $font-family-primary;
+  padding: 10px 24px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: $szFontSmall;
+  line-height: 120%;
+  font-weight: $font-weight-primary;
+  text-align: center;
+  border: none;
+  &--grey {
+    background: $clLightGrey;
+    color: $clBlue;
+
+    &:hover {
+      background: $clBlue;
+      color: $clWhite;
+    }
+  }
+
+  &--blue {
+    background: $clBlue;
+    color: $clWhite;
+
+    &:hover {
+      background: $clDarkBlue;
+    }
+  }
+
+  &--yellow {
+    background: $clYellow;
+    color: #001853;
+
+    &:hover {
+      background: $clBlue;
+      color: $clWhite;
+    }
+  }
+  &--trans {
+    color: $clBlue;
+    border: 1px solid $clBlue
+  }
+
+  &--bold {
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: $font-weight-primary;
+  font-size: $szFontSmall;
+  line-height: 120%;
+  color: $clBlack;
+  &--bold {
+    font-weight: $font-weight-bold;
+  }
+  &--blue {
+    color: $clBlue;
+  }
+  &--underline {
+    border-bottom: 1px solid $clBlue;
+  }
+}

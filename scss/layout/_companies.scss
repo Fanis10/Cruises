@@ -1,0 +1,81 @@
+.companies {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    background: $clWhite;
+    box-shadow: 0px 4px 24px rgba(0, 24, 83, 0.08);
+    border-radius: 10px;
+
+    &-header {
+      background: $clLightGrey;
+      border-radius: 10px 10px 0px 0px;
+      display: flex;
+      @include respond-to("tablet") {
+        flex-wrap: wrap;
+      }
+    }
+
+    &-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        font-family: $font-family-secondary;
+        font-weight: $font-weight-bold;
+        font-size: $szFontSubitemHeader;
+        line-height: 120%;
+        text-decoration: underline;
+        color: $clBlue;
+        @include respond-to("tablet") {
+          font-size: $szFontSubitemHeader-mob;
+        }
+      }
+    }
+
+    &-info {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      @include respond-to("tablet") {
+        padding: 18px 20px;
+      }
+    }
+
+    &-btn {
+      width: 140px;
+      flex-shrink: 0;
+      @include respond-to("tablet") {
+        width: 100%;
+      }
+      .btn {
+        width: 100%;
+        height: 100%;
+        font-size: $szFontRegular;
+        border-radius: 0px 10px 0px 0px;
+        @include respond-to("tablet") {
+          border-radius: 0;
+          font-size: $szFontLight;
+        }
+      }
+    }
+
+    &-footer {
+      font-weight: $font-weight-primary;
+      font-size: $szFontRegular;
+      line-height: 150%;
+      color: $clBlack;
+      padding: 16px 30px;
+      @include respond-to("tablet") {
+        padding: 10px 15px;
+        font-size: $szFontLight;
+      }
+    }
+  }
+}

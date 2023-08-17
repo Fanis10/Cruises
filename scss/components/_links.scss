@@ -1,0 +1,18 @@
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 10px;
+
+  &__item {
+    font-weight: $font-weight-semibold;
+    font-size: $szFontRegular;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    color: $clBlue;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

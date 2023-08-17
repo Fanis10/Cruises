@@ -1,0 +1,223 @@
+.banner {
+  padding: 30px 0 0;
+  @include respond-to("tablet") {
+    padding: 0;
+  }
+  .container {
+    @include respond-to("tablet") {
+      padding: 0;
+    }
+  }
+  &__slide {
+    border-radius: 10px;
+    height: 530px;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include respond-to("tablet") {
+      padding: 55px 20px;
+      border-radius: 0;
+      background-position: right -320px center;
+    }
+
+    &-title {
+      font-family: $font-family-secondary;
+      font-weight: $font-weight-bold;
+      font-size: $szFontHeaderBlack;
+      line-height: 64px;
+      color: $clWhite;
+
+      @include respond-to("tablet") {
+        font-size: $szFontHeaderBlack-mob;
+        line-height: 37px;
+      }
+    }
+  }
+
+  &__pagination {
+    bottom: 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4px;
+    left: 45px !important;
+    right: 45px !important;
+    width: auto !important;
+
+    @include respond-to("tablet") {
+      left: 20px !important;
+      right: 20px !important;
+    }
+
+    .swiper-pagination-bullet {
+      height: 4px;
+      width: 100%;
+      background: $clLightGrey;
+      opacity: 1;
+      border-radius: 2px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $clYellow;
+    }
+  }
+}
+
+.details {
+  @include respond-to("tablet-wide") {
+    padding-bottom: 30px;
+  }
+
+  @include respond-to("tablet") {
+    padding-bottom: 0px;
+  }
+
+  &__list {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include respond-to("tablet-wide") {
+      overflow-x: auto;
+      grid-template-columns: repeat(4, 240px);
+      margin: 0 -20px;
+      padding: 0 20px 20px;
+    }
+  }
+
+  &__item {
+    background: $clWhite;
+    box-shadow: 0px 4px 32px rgba(170, 170, 170, 0.08);
+    border-radius: 10px;
+    padding: 35px 40px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    &-header {
+      font-weight: $font-weight-bold;
+      font-size: $szFontRegular;
+      line-height: 120%;
+      color: $clBlue;
+      margin-bottom: 7px;
+    }
+
+    &-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 35px;
+
+      @include respond-to("tablet") {
+        margin-bottom: 20px;
+      }
+    }
+
+    .link {
+      color: $clBlue;
+    }
+  }
+}
+
+.partners {
+  background: $clLightGrey;
+
+  @include respond-to("tablet") {
+    padding: 25px 0;
+  }
+
+  &__wrapper {
+    padding-bottom: 10px;
+    @include respond-to("tablet-min") {
+      
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      transform: none !important;
+    }
+  }
+  &__pagination {
+    @include respond-to("tablet-min") {
+      display: none;
+    }
+  }
+  &__slide {
+    text-align: center;
+    @include respond-to("tablet-min") {
+      width: auto !important;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 0;
+  }
+
+  .section__nav {
+    align-items: flex-end;
+  }
+}
+
+.advantages {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @include respond-to("tablet") {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    &-header {
+      position: relative;
+      font-weight: $font-weight-bold;
+      font-size: $szFontItemHeader;
+      line-height: 130%;
+      color: $clBlue;
+      min-height: 58px;
+      margin-bottom: 15px;
+
+      @include respond-to("tablet") {
+        font-size: $szFontBig;
+        min-height: auto;
+      }
+
+      &:before {
+        @include pseudo();
+        top: -7px;
+        left: -13px;
+        height: 42px;
+        width: 42px;
+        background: $clYellow;
+        border-radius: 10px;
+        z-index: -1;
+
+        @include respond-to("tablet") {
+          height: 32px;
+          width: 32px;
+          left: -7px;
+        }
+      }
+    }
+
+    &-text {
+      font-weight: $font-weight-primary;
+      font-size: $szFontBig;
+      line-height: 130%;
+      color: $clBlack;
+
+      @include respond-to("tablet") {
+        font-size: $szFontMedium;
+      }
+    }
+  }
+}

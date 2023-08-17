@@ -1,0 +1,181 @@
+.ships {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    background: $clWhite;
+    box-shadow: 0px 4px 24px rgba(0, 24, 83, 0.08);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &-mobtitle {
+      display: none;
+      font-family: $font-family-secondary;
+      font-weight: $font-weight-bold;
+      font-size: $szFontSectionHeader-mob;
+      line-height: 32px;
+      color: $clDarkBlue;
+      margin-bottom: 15px;
+
+      @include respond-to("tablet-wide") {
+        display: block;
+      }
+    }
+
+    &-mobstars {
+      display: none;
+
+      @include respond-to("tablet-wide") {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-mobabout {
+      display: none;
+
+      @include respond-to("tablet-wide") {
+        display: block;
+        font-weight: $font-weight-primary;
+        font-size: $szFontSmall;
+        line-height: 150%;
+        color: $clBlack;
+      }
+    }
+
+    &-body {
+      width: 77%;
+      display: flex;
+      flex-wrap: wrap;
+
+      @include respond-to("tablet-wide") {
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 15px 0 15px;
+      }
+
+      &__slider {
+        width: 41%;
+        padding-bottom: 20px;
+
+        @include respond-to("tablet-wide") {
+          width: 100%;
+          padding-bottom: 0;
+
+          img {
+            border-radius: 10px;
+          }
+        }
+      }
+
+      &__text {
+        width: 59%;
+        padding: 20px 30px 60px 30px;
+        display: flex;
+        flex-direction: column;
+
+        @include respond-to("tablet-wide") {
+          width: 100%;
+        }
+      }
+
+      &__title {
+        font-family: $font-family-secondary;
+        font-weight: $font-weight-bold;
+        font-size: $szFontSectionHeader;
+        line-height: 37px;
+        color: $clDarkBlue;
+        margin-bottom: 20px;
+
+        @include respond-to("tablet-wide") {
+          display: none;
+        }
+      }
+
+      &__text {
+        font-weight: $font-weight-primary;
+        font-size: $szFontSmall;
+        line-height: 150%;
+        color: $clBlack;
+
+        @include respond-to("tablet-wide") {
+          display: none;
+        }
+      }
+    }
+
+    &-info {
+      width: 23%;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid $clLightGrey;
+
+      @include respond-to("tablet-wide") {
+        width: 100%;
+      }
+
+      &__body {
+        padding: 16px 16px 16px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @include respond-to("tablet-wide") {
+          padding: 20px 15px;
+          gap: 15px;
+        }
+      }
+
+      &__stars {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include respond-to("tablet-wide") {
+          display: none;
+        }
+      }
+
+      &__details {
+        font-size: $szFontSmall;
+        line-height: 120%;
+        color: $clBlue;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        a {
+          text-decoration: underline;
+        }
+
+        b {
+          font-family: $font-family-secondary;
+          color: $clDarkBlue;
+          margin-right: 10px;
+        }
+      }
+
+      &__footer {
+        margin-top: auto;
+
+        .btn {
+          font-weight: $font-weight-semibold;
+          font-size: $szFontRegular;
+          width: 100%;
+          height: 49px;
+          border-radius: 0px 0px 10px 0px;
+
+          @include respond-to("tablet-wide") {
+            border-radius: 0 0 10px 10px;
+          }
+        }
+      }
+    }
+  }
+}

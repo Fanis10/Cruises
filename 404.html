@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/nice-select2.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Cruises</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#" class="logo">
+            <div class="logo__img">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M30.63 18.5545C31.935 19.0795 32.745 20.6245 32.445 21.9895L31.83 24.7795C30.765 29.5795 27 32.9995 21.57 32.9995H14.43C8.99997 32.9995 5.23498 29.5795 4.16998 24.7795L3.55498 21.9895C3.25498 20.6245 4.06496 19.0795 5.36996 18.5545L7.49998 17.6995L15.765 14.3845C17.205 13.8145 18.795 13.8145 20.235 14.3845L28.5 17.6995L30.63 18.5545Z"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18 33V15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <g opacity="0.4">
+                  <path
+                    d="M28.5 12V17.7L20.235 14.385C18.795 13.815 17.205 13.815 15.765 14.385L7.5 17.7V12C7.5 9.525 9.525 7.5 12 7.5H24C26.475 7.5 28.5 9.525 28.5 12Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M21.75 7.5H14.25V4.5C14.25 3.675 14.925 3 15.75 3H20.25C21.075 3 21.75 3.675 21.75 4.5V7.5Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+            <span class="logo__text">
+              UniCruises
+            </span>
+          </a>
+        </div>
+        <nav class="header__nav">
+          <div class="header__link header__slink">
+            <a class="header__slink-link" href="#">Круизы</a>
+            <div class="header__submenu">
+              <div class="container">
+                <div class="header__submenu-inner">
+                  <div class="header__submenu-col">
+                    <h2 class="header__submenu-header">Города отправления</h2>
+                    <nav class="header__submenu-nav">
+                      <a href="#">Москва</a>
+                      <a href="#">Санкт-Петербург</a>
+                      <a href="#">Казань</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                    </nav>
+                    <a href="#" class="btn btn--grey btn--bold">
+                      <span>Все города</span>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                          stroke="#001853" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="header__submenu-col">
+                    <h2 class="header__submenu-header">Реки</h2>
+                    <nav class="header__submenu-nav">
+                      <a href="#">по Волге</a>
+                      <a href="#">по Оке</a>
+                      <a href="#">по Каме</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                    </nav>
+                    <a href="#" class="btn btn--grey btn--bold">
+                      <span>Все реки</span>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                          stroke="#001853" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__menu" id="menu">
+            <a href="#" class="header__link">Теплоходы</a>
+            <a href="#" class="header__link">Круизные компании</a>
+            <a href="#" class="header__link">Акции</a>
+            <div class="header__mlang">
+              <div class="lang lang--dark">
+                <div class="lang__inner">
+                  <div class="lang__icon"><img src="img/icons/flag-ru.svg" alt=""></div>
+                  <div class="lang__hint">₽</div>
+                </div>
+                <div class="lang__toggle">
+                  <div class="lang__item">
+                    <div class="lang__icon"><img src="img/icons/flag-ru.svg" alt=""></div>
+                    <div class="lang__hint">₽</div>
+                  </div>
+                  <div class="lang__item">
+                    <div class="lang__icon"><img src="img/icons/flag-gb.svg" alt=""></div>
+                    <div class="lang__hint"><img src="img/icons/valute-dollar.svg" alt=""></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="header__lang">
+          <div class="lang">
+            <div class="lang__inner">
+              <div class="lang__icon"><img src="img/icons/flag-ru.svg" alt=""></div>
+              <div class="lang__hint">₽</div>
+            </div>
+            <div class="lang__toggle">
+              <div class="lang__item">
+                <div class="lang__icon"><img src="img/icons/flag-ru.svg" alt=""></div>
+                <div class="lang__hint">₽</div>
+              </div>
+              <div class="lang__item">
+                <div class="lang__icon"><img src="img/icons/flag-gb.svg" alt=""></div>
+                <div class="lang__hint"><img src="img/icons/valute-dollar.svg" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__burger">
+          <div class="burger" id="menuOpen">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="#" class="breadcrumbs__link">
+          <img src="img/icons/double-caret-left-small.svg" alt="">
+          <span>Вернуться на главную страницу</span>
+        </a>
+      </div>
+    </div>
+    <div class="error">
+      <img src="img/404/404preview.png" alt="">
+      <div class="container">
+        <div class="error__inner">
+          <h2 class="error__header">Страница не найдена</h2>
+          <a href="#" class="btn btn--yellow">Вернуться на предыдущую страницу</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__item">
+          <a href="#" class="logo logo--dark">
+            <div class="logo__img">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M30.63 18.5545C31.935 19.0795 32.745 20.6245 32.445 21.9895L31.83 24.7795C30.765 29.5795 27 32.9995 21.57 32.9995H14.43C8.99997 32.9995 5.23498 29.5795 4.16998 24.7795L3.55498 21.9895C3.25498 20.6245 4.06496 19.0795 5.36996 18.5545L7.49998 17.6995L15.765 14.3845C17.205 13.8145 18.795 13.8145 20.235 14.3845L28.5 17.6995L30.63 18.5545Z"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18 33V15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <g opacity="0.4">
+                  <path
+                    d="M28.5 12V17.7L20.235 14.385C18.795 13.815 17.205 13.815 15.765 14.385L7.5 17.7V12C7.5 9.525 9.525 7.5 12 7.5H24C26.475 7.5 28.5 9.525 28.5 12Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M21.75 7.5H14.25V4.5C14.25 3.675 14.925 3 15.75 3H20.25C21.075 3 21.75 3.675 21.75 4.5V7.5Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+            <span class="logo__text">
+              UniCruises
+            </span>
+          </a>
+          <nav class="footer__menu">
+            <a href="#">Акции</a>
+            <a href="#">О нас</a>
+            <a href="#">Контакты</a>
+            <a href="#">Отзывы о теплоходах</a>
+            <a href="#">Отзывы о круизных компаниях</a>
+            <a href="#">Написать в техподдержку</a>
+          </nav>
+        </div>
+        <div class="footer__item">
+          <span class="footer__header footer__ToggleMenu">Круизы по рекам</span>
+          <nav class="footer__menu footer__ToggledMenu">
+            <a href="#">по Волге</a>
+            <a href="#">по Каме</a>
+            <a href="#">по Оке</a>
+            <a href="#">по Волге</a>
+            <a href="#">по Оке</a>
+            <a href="#" class="footer__more">
+              <span>Все реки</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                  stroke="#001853" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+        <div class="footer__item">
+          <span class="footer__header footer__ToggleMenu">Круиз из города</span>
+          <nav class="footer__menu footer__ToggledMenu">
+            <a href="#">Москва</a>
+            <a href="#">Санкт-Петербург</a>
+            <a href="#">Казань</a>
+            <a href="#">Самара</a>
+            <a href="#">Казань</a>
+            <a href="#" class="footer__more">
+              <span>Все реки</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                  stroke="#001853" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+        <div class="footer__item">
+          <span class="footer__header footer__ToggleMenu">Теплоходы</span>
+          <nav class="footer__menu footer__ToggledMenu">
+            <a href="#">А.С.Пушкин</a>
+            <a href="#">Александр Грин</a>
+            <a href="#">Александр Грин</a>
+            <a href="#">Александр Грин</a>
+            <a href="#">Александр Грин</a>
+            <a href="#" class="footer__more">
+              <span>Все реки</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                  stroke="#001853" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+        <div class="footer__item">
+          <span class="footer__header footer__ToggleMenu">Круизные компании</span>
+          <nav class="footer__menu footer__ToggledMenu">
+            <a href="#">Мостурфлот</a>
+            <a href="#">ИнфоФлот</a>
+            <a href="#">ИнфоФлот</a>
+            <a href="#">ИнфоФлот</a>
+            <a href="#">ИнфоФлот</a>
+            <a href="#" class="footer__more">
+              <span>Все реки</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                  stroke="#001853" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__copy">
+        <p>Copyright © 2016-2022. Все права защищены.</p>
+        <p>UniCruises — часть HolidayPrice Inc., европейского лидера в сфере онлайн-туризма и сопутствующих услуг.</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__info">
+          <nav class="footer__info-nav">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Пользовательское соглашение</a>
+            <a href="#">Карта сайта</a>
+          </nav>
+          <div class="footer__info-text">
+            <span>При использовании материалов активная ссылка на сайт UniCruises.com обязательна</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="js/nice-select2.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

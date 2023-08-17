@@ -1,0 +1,45 @@
+@import "utils/breakpoints";
+@import "utils/colors";
+@import "utils/sizes";
+@import "utils/mixins";
+@import "utils/helpers";
+
+@import "base/reset";
+@import "base/typography";
+
+
+@import "components/lang";
+@import "components/logo";
+@import "components/stars";
+@import "components/breadcrumbs";
+@import "components/headers";
+@import "components/buttons";
+@import "components/select";
+@import "components/cruise-slider";
+@import "components/inputs";
+@import "components/links";
+@import "components/sreviews";
+@import "components/feedback";
+@import "components/modal";
+@import "components/infocards";
+@import "components/cruisecards";
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sort";
+@import "layout/ships";
+@import "layout/companies";
+@import "layout/error";
+@import "layout/main";
+@import "layout/categories";
+@import "layout/reviews";
+
+
+
+.test {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}

@@ -1,0 +1,255 @@
+.header {
+  background: $clBlue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  &--fixedScroll {
+    position: fixed;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respond-to("tablet-wide") {
+      gap: 32px;
+    }
+  }
+
+  &__logo {
+    width: 170px;
+  }
+
+  &__lang {
+    width: 170px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__burger {
+    display: none;
+
+    @include respond-to("tablet-wide") {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+
+    @include respond-to("tablet-wide") {
+      margin-left: auto;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+
+    @include respond-to("tablet-wide") {
+      position: fixed;
+      top: 80px;
+      right: -150%;
+      width: 100%;
+      bottom: 0;
+      background: $clWhite;
+      padding: 25px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      z-index: 999;
+      transition: all 0.3s ease;
+
+      &.active {
+        right: 0;
+      }
+    }
+  }
+
+  &__submenu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -200vh;
+    background: $clWhite;
+    box-shadow: 0px 4px 24px rgba(1, 13, 38, 0.08);
+    padding: 25px 0 50px;
+    z-index: 995;
+
+    &-inner {
+      display: flex;
+      gap: 170px;
+
+      @include respond-to("tablet-wide") {
+        gap: 35px;
+      }
+    }
+
+    &-header {
+      font-weight: $font-weight-bold;
+      font-size: 24px;
+      line-height: 32px;
+      color: $clDarkBlue;
+      margin-bottom: 20px;
+
+      @include respond-to("tablet") {
+        font-size: $szFontSmall;
+        line-height: 16px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+      @include respond-to("tablet") {
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+      a {
+        font-size: $szFontMedium;
+        line-height: 150%;
+        color: $clBlack;
+        @include respond-to("tablet") {
+          font-size: $szFontSmall;
+        }
+      }
+    }
+
+    &.active {
+      top: 100%;
+    }
+  }
+
+  &__lang {
+    @include respond-to("tablet-wide") {
+      display: none;
+    }
+  }
+
+  &__mlang {
+    display: none;
+
+    .lang__inner {
+      padding-left: 0;
+    }
+
+    @include respond-to("tablet-wide") {
+      display: block;
+    }
+  }
+
+  &__link {
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-primary;
+    font-size: $szFontMedium;
+    line-height: 150%;
+    color: $clWhite;
+    padding: 29px 0;
+
+    &:hover {
+      text-shadow: 1px 0px 0px #fff;
+    }
+
+    @include respond-to("tablet-wide") {
+      color: $clBlue;
+      padding: 0;
+    }
+  }
+
+  &__slink {
+    &-link {
+      color: $clWhite;
+    }
+
+    &:hover {
+      @include respond-to("tablet-wide-min") {
+        .header__submenu {
+          top: 100%;
+        }
+      }
+    }
+
+    @include respond-to("tablet-wide") {
+      color: $clWhite;
+      padding: 29px 0;
+    }
+  }
+}
+
+.burger {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border-radius: 50%;
+  z-index: 666;
+  cursor: pointer;
+
+  span {
+    position: relative;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    user-select: none;
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    border-radius: 3px;
+    display: block;
+    width: 27px;
+    height: 3px;
+    background-color: $clWhite;
+    outline: 1px solid transparent;
+    transition-property: background-color, transform;
+    transition-duration: 0.3s;
+    border-radius: 3px;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 27px;
+      height: 3px;
+      background-color: $clWhite;
+      outline: 1px solid transparent;
+      transition-property: background-color, transform;
+      transition-duration: 0.3s;
+      border-radius: 3px;
+    }
+
+    &:before {
+      top: -9px;
+    }
+
+    &:after {
+      top: 9px;
+    }
+  }
+
+  &.active {
+    span {
+      background-color: transparent;
+
+      &:before {
+        background-color: $clWhite;
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      &:after {
+        background-color: $clWhite;
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+

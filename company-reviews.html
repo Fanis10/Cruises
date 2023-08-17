@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/nice-select2.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Cruises</title>
+</head>
+
+<body>
+  <div class="modal-done" id="modal-done">
+    <h2 class="modal-done__header">Отзыв отправлен</h2>
+    <p class="modal-done__hint">После проверки ваш отзыв будет опубликован</p>
+  </div>
+  <header class="header header--fixedScroll">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#" class="logo">
+            <div class="logo__img">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M30.63 18.5545C31.935 19.0795 32.745 20.6245 32.445 21.9895L31.83 24.7795C30.765 29.5795 27 32.9995 21.57 32.9995H14.43C8.99997 32.9995 5.23498 29.5795 4.16998 24.7795L3.55498 21.9895C3.25498 20.6245 4.06496 19.0795 5.36996 18.5545L7.49998 17.6995L15.765 14.3845C17.205 13.8145 18.795 13.8145 20.235 14.3845L28.5 17.6995L30.63 18.5545Z"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18 33V15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <g opacity="0.4">
+                  <path
+                    d="M28.5 12V17.7L20.235 14.385C18.795 13.815 17.205 13.815 15.765 14.385L7.5 17.7V12C7.5 9.525 9.525 7.5 12 7.5H24C26.475 7.5 28.5 9.525 28.5 12Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M21.75 7.5H14.25V4.5C14.25 3.675 14.925 3 15.75 3H20.25C21.075 3 21.75 3.675 21.75 4.5V7.5Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+            <span class="logo__text">
+              UniCruises
+            </span>
+          </a>
+        </div>
+        <nav class="header__nav">
+          <div class="header__link header__slink">
+            <a class="header__slink-link" href="#">Круизы</a>
+            <div class="header__submenu">
+              <div class="container">
+                <div class="header__submenu-inner">
+                  <div class="header__submenu-col">
+                    <h2 class="header__submenu-header">Города отправления</h2>
+                    <nav class="header__submenu-nav">
+                      <a href="#">Москва</a>
+                      <a href="#">Санкт-Петербург</a>
+                      <a href="#">Казань</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                    </nav>
+                    <a href="#" class="btn btn--grey btn--bold">
+                      <span>Все города</span>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                          stroke="#001853" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="header__submenu-col">
+                    <h2 class="header__submenu-header">Реки</h2>
+                    <nav class="header__submenu-nav">
+                      <a href="#">по Волге</a>
+                      <a href="#">по Оке</a>
+                      <a href="#">по Каме</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                      <a href="#">Самара</a>
+                    </nav>
+                    <a href="#" class="btn btn--grey btn--bold">
+                      <span>Все реки</span>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                          stroke="#001853" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__menu" id="menu">
+            <a href="#" class="header__link">Теплоходы</a>
+            <a href="#" class="header__link">Круизные компании</a>
+            <a href="#" class="header__link">Акции</a>
+            <div class="header__mlang">
+              <div class="lang lang--dark">
+                <div class="lang__inner">
+                  <div class="lang__icon"><img src="img/icons/flag-ru.svg" alt=""></div>
+                  <div class="lang__hint">₽</div>
+                </div>
+                <div class="lang__toggle">
+                  <div class="lang__item">
+                    <div class="lang__icon"><img src="img/icons/flag-ru.svg" alt=""></div>
+                    <div class="lang__hint">₽</div>
+                  </div>
+                  <div class="lang__item">
+                    <div class="lang__icon"><img src="img/icons/flag-gb.svg" alt=""></div>
+                    <div class="lang__hint"><img src="img/icons/valute-dollar.svg" alt=""></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="header__lang">
+          <div class="lang">
+            <div class="lang__inner">
+              <div class="lang__icon"><img src="img/icons/flag-ru.svg" alt=""></div>
+              <div class="lang__hint">₽</div>
+            </div>
+            <div class="lang__toggle">
+              <div class="lang__item">
+                <div class="lang__icon"><img src="img/icons/flag-ru.svg" alt=""></div>
+                <div class="lang__hint">₽</div>
+              </div>
+              <div class="lang__item">
+                <div class="lang__icon"><img src="img/icons/flag-gb.svg" alt=""></div>
+                <div class="lang__hint"><img src="img/icons/valute-dollar.svg" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__burger">
+          <div class="burger" id="menuOpen">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="reviews section">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="#" class="breadcrumbs__link">Главная</a>
+          <span>/</span>
+          <span class="breadcrumbs__link">Донинтурфлот</span>
+        </div>
+
+        <div class="reviews__inner">
+          <div class="reviews__aside">
+            <div class="reviews__company">
+              <div class="reviews__company-logo">
+                <img src="img/logos/donintour.svg" alt="">
+              </div>
+              <h1 class="reviews__company-title">Отзывы о «Донинтурфлот»</h1>
+              <div class="reviews__rate">
+                <div class="stars stars--lg" data-rate="4">
+                  <div class="stars__rate">
+                    4.8
+                  </div>
+                  <div class="stars__view">
+                    <div class="stars__item">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                          stroke="#E0E0E0"></path>
+                      </svg>
+                    </div>
+                    <div class="stars__item">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                          stroke="#E0E0E0"></path>
+                      </svg>
+                    </div>
+                    <div class="stars__item">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                          stroke="#E0E0E0"></path>
+                      </svg>
+                    </div>
+                    <div class="stars__item">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                          stroke="#E0E0E0"></path>
+                      </svg>
+                    </div>
+                    <div class="stars__item">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                          stroke="#E0E0E0"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <span class="reviews__rate-count">1367 отзывов</span>
+              </div>
+            </div>
+          </div>
+          <div class="reviews__body">
+            <div class="reviews__specs">
+              <div class="reviews__specs-item">
+                <strong>Количество теплоходов:</strong>
+                <span>8</span>
+              </div>
+              <div class="reviews__specs-item">
+                <strong>Дата создания компании:</strong>
+                <span>1992</span>
+              </div>
+            </div>
+            <div class="reviews__text">
+              <p><span class="text-hidden">Компания «Донинтурфлот» была образована в 1992 году путем выделения круизного
+                  флота из Волго-Донского речного пароходства с целью обслуживания туристических пассажирских перевозок.
+                  На сегодняшний день это одна из крупнейших российских судоходных компаний, обслуживающая
+                  <span class="text-hidden-bg"></span><span class="text-hidden-inner"> круизные маршруты высоко комфортабельными, четырехпалубными
+                    теплоходами класса Премиум.</span></span> <a href="#" class="read__more">Читать далее</a></p>
+              <a href="#" class="reviews__pick link link--bold link--blue link--underline">
+                <span>Выбрать круиз</span>
+                <img src="img/icons/chevron-right.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="reviews__inner">
+          <div class="reviews__aside">
+            <div class="reviews__info">
+              <div class="reviews__info-body">
+                <h2 class="reviews__info-header">Круизы от 49 000 рублей</h2>
+                <a href="#" class="btn btn--blue">Выбрать круиз</a>
+                <p class="reviews__info-text">Вы находитесь на сайте-агрегаторе всех онлайн-курсов по IT и digital</p>
+              </div>
+              <div class="reviews__info-companies">
+                <h2 class="reviews__info-header">Отзывы о других теплоходах круизной компании Донинтурфлот</h2>
+                <div class="sreviews">
+                  <div class="sreviews__item">
+                    <div class="sreviews__title">
+                      <a href="" class="sreviews__title-link">Сергей Есенин</a>
+                    </div>
+                    <div class="sreviews__body">
+                      <a href="#" class="sreviews__body-count">
+                        <span>1387 отзывов</span>
+                      </a>
+                      <div class="sreviews__body__stars">
+                        <div class="stars stars--sm" data-rate="4">
+                          <div class="stars__view">
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sreviews__item">
+                    <div class="sreviews__title">
+                      <a href="" class="sreviews__title-link">Дмитрий Фурманов</a>
+                    </div>
+                    <div class="sreviews__body">
+                      <a href="#" class="sreviews__body-count">
+                        <span>1387 отзывов</span>
+                      </a>
+                      <div class="sreviews__body__stars">
+                        <div class="stars stars--sm" data-rate="4">
+                          <div class="stars__view">
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sreviews__item">
+                    <div class="sreviews__title">
+                      <a href="" class="sreviews__title-link">Константин Коротков</a>
+                    </div>
+                    <div class="sreviews__body">
+                      <a href="#" class="sreviews__body-count">
+                        <span>1387 отзывов</span>
+                      </a>
+                      <div class="sreviews__body__stars">
+                        <div class="stars stars--sm" data-rate="4">
+                          <div class="stars__view">
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                            <div class="stars__item">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                  stroke="#E0E0E0" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__info-links">
+                <h2 class="reviews__info-header">Отзывы о других круизных компаниях</h2>
+                <nav class="links">
+                  <a href="#" class="links__item">Днепробуг</a>
+                  <a href="#" class="links__item">Белый лебедь</a>
+                  <a href="#" class="links__item">Цезарь тревел</a>
+                  <a href="#" class="links__item">Днепробуг</a>
+                  <a href="#" class="links__item">Гама</a>
+                  <a href="#" class="links__item">Днепробуг</a>
+                  <a href="#" class="links__item">Белый лебедь</a>
+                  <a href="#" class="links__item">Гама</a>
+                  <a href="#" class="links__item">Цезарь тревел</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="reviews__body">
+            <div class="reviews__sort">
+              <div class="reviews__sort-inner">
+                <div class="reviews__sort-title">
+                  <span>Сортировать:</span>
+                </div>
+                <a href="#" class="reviews__sort-item">по дате</a>
+                <div class="reviews__sort-item">
+                  <select id="reviewsSort">
+                    <option value="1" selected>отрицательные</option>
+                    <option value="2">Положительные</option>
+                  </select>
+                </div>
+                <a href="#" class="reviews__sort-item">положительные</a>
+                <a href="#" class="reviews__sort-item">популярные</a>
+              </div>
+              <div class="reviews__sort-nav">
+                <a href="#" class="btn btn--trans">Оставить отзыв</a>
+              </div>
+            </div>
+            <div class="reviews__list">
+              <div class="reviews__item">
+                <div class="reviews__item-header">
+                  <div class="reviews__item-stars">
+                    <div class="stars stars--sm" data-rate="4">
+                      <div class="stars__rate">
+                        4.8
+                      </div>
+                      <div class="stars__view">
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews__item-name">
+                    <span>Теплоход «Игорь Стравинский» </span>
+                  </div>
+                </div>
+                <div class="reviews__item-rating">
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Чистота
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Программа тура
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Сервис и питание
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Экскурсии
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 90%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">4.5</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Экипаж
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                </div>
+                <div class="reviews__item-author">
+                  <div class="reviews__item-author__avatar">
+                    <img src="img/icons/avatar.svg" alt="">
+                  </div>
+                  <div class="reviews__item-author__body">
+                    <div class="reviews__item-author__name">Тимофей</div>
+                    <div class="reviews__item-author__date">31 января 2022</div>
+                  </div>
+                </div>
+                <h3 class="reviews__item-title">Лучший круиз в моей жизни</h3>
+                <p class="reviews__item-text"><span class="text-hidden text-hidden--grey">Отдыхали на теплоходе с 25 мая
+                    по 7 июня,все очень понравилось. Кухня
+                    великолепная, хочу выразить благодарность Елене Рожновой, она нас обслуживала на протяжении всего
+                    круиза,очень приятная и добрая девушка. Желаю ей успехов и радости в жизни. Очень талантливы Сергей
+                    Писарев и Илья Гончаров, просто виртуозы своего дела, наслаждались исполнением ежедневно. Удачи им и
+                    процветания.Особенно хочу выразить восторг Юлии Самусевич, ее исполнение великолепно. Ее голос
+                    великолепен, <span class="text-hidden-bg"></span><span class="text-hidden-inner"> ее харизма очаровывает.Творческих успехов в исполнении
+                      и создании новых песен.</span></span>
+                  <a href="#" class="read__more">Читать далее</a>
+                </p>
+                <div class="reviews__item-footer">
+                  <a href="#" class="reviews__reply link link--bold link--blue link--underline">Ответить</a>
+                  <div class="reviews__item-rate">
+                    <a href="#" class="reviews__item-rate__up">
+                      <img src="img/icons/thumbsup.svg" alt="">
+                      <span>11</span>
+                    </a>
+                    <a href="#" class="reviews__item-rate__down">
+                      <img src="img/icons/thumbsdown.svg" alt="">
+                      <span>3</span>
+                    </a>
+                  </div>
+                </div>
+                <form class="reviews__item-form form">
+                  <input type="text" class="input" placeholder="Введите имя">
+                  <input type="text" class="input" placeholder="Введите e-mail">
+                  <textarea class="textfield" placeholder="Напишите комментарий"></textarea>
+                  <label class="check-wrap">
+                    <input type="checkbox" class="check-wrap__inp" required>
+                    <span class="check-wrap__check"></span>
+                    <span class="check-wrap__text">Соглашаюсь на обработку моих персональных данных в соответствии с
+                      Политикой конфиденциальности и принимаю условия Пользовательского соглашения</span>
+                  </label>
+                  <button class="btn btn--blue">Оставить комментарий</button>
+                </form>
+              </div>
+              <div class="reviews__item">
+                <div class="reviews__item-header">
+                  <div class="reviews__item-stars">
+                    <div class="stars stars--sm" data-rate="4">
+                      <div class="stars__rate">
+                        4.8
+                      </div>
+                      <div class="stars__view">
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews__item-name">
+                    <span>Теплоход «Игорь Стравинский» </span>
+                  </div>
+                </div>
+                <div class="reviews__item-rating">
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Чистота
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Программа тура
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Сервис и питание
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Экскурсии
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 90%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">4.5</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Экипаж
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                </div>
+                <div class="reviews__item-author">
+                  <div class="reviews__item-author__avatar">
+                    <img src="img/icons/avatar.svg" alt="">
+                  </div>
+                  <div class="reviews__item-author__body">
+                    <div class="reviews__item-author__name">Тимофей</div>
+                    <div class="reviews__item-author__date">31 января 2022</div>
+                  </div>
+                </div>
+                <h3 class="reviews__item-title">Лучший круиз в моей жизни</h3>
+                <p class="reviews__item-text"><span class="text-hidden text-hidden--grey">Отдыхали на теплоходе с 25 мая
+                    по 7 июня,все очень понравилось. Кухня
+                    великолепная, хочу выразить благодарность Елене Рожновой, она нас обслуживала на протяжении всего
+                    круиза,очень приятная и добрая девушка. Желаю ей успехов и радости в жизни. Очень талантливы Сергей
+                    Писарев и Илья Гончаров, просто виртуозы своего дела, наслаждались исполнением ежедневно. Удачи им и
+                    процветания.Особенно хочу выразить восторг Юлии Самусевич, ее исполнение великолепно. Ее голос
+                    великолепен, <span class="text-hidden-bg"></span><span class="text-hidden-inner"> ее харизма очаровывает.Творческих успехов в исполнении
+                      и создании новых песен.</span></span>
+                  <a href="#" class="read__more">Читать далее</a>
+                </p>
+                <div class="reviews__item-footer">
+                  <a href="#" class="reviews__reply link link--bold link--blue link--underline">Ответить</a>
+                  <div class="reviews__item-rate">
+                    <a href="#" class="reviews__item-rate__up">
+                      <img src="img/icons/thumbsup.svg" alt="">
+                      <span>11</span>
+                    </a>
+                    <a href="#" class="reviews__item-rate__down">
+                      <img src="img/icons/thumbsdown.svg" alt="">
+                      <span>3</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="reviews__item-answer">
+                  <div class="reviews__item-author">
+                    <div class="reviews__item-author__avatar">
+                      <img src="img/icons/avatar-donintour.svg" alt="">
+                    </div>
+                    <div class="reviews__item-author__body">
+                      <div class="reviews__item-author__name">Донинтурфлот</div>
+                      <div class="reviews__item-author__date">31 января 2022</div>
+                    </div>
+                  </div>
+                  <p class="reviews__item-text">Лента серии LUX с низким энергопотреблением, питанием 24 В и мощностью
+                    2.9 Вт/м для декоративной подсветки различных интерьеров. Светодиоды SMD 3528 холодного белого цвета
+                    свечения (7700 - 9600 К) с плотностью. </p>
+                  <div class="reviews__item-footer reviews__item-footer--end">
+                    <div class="reviews__item-rate">
+                      <a href="#" class="reviews__item-rate__up">
+                        <img src="img/icons/thumbsup.svg" alt="">
+                        <span>11</span>
+                      </a>
+                      <a href="#" class="reviews__item-rate__down">
+                        <img src="img/icons/thumbsdown.svg" alt="">
+                        <span>3</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <form class="reviews__item-form form">
+                  <input type="text" class="input" placeholder="Введите имя">
+                  <input type="text" class="input" placeholder="Введите e-mail">
+                  <textarea class="textfield" placeholder="Напишите комментарий"></textarea>
+                  <label class="check-wrap">
+                    <input type="checkbox" class="check-wrap__inp" required>
+                    <span class="check-wrap__check"></span>
+                    <span class="check-wrap__text">Соглашаюсь на обработку моих персональных данных в соответствии с
+                      Политикой конфиденциальности и принимаю условия Пользовательского соглашения</span>
+                  </label>
+                  <button class="btn btn--blue">Оставить комментарий</button>
+                </form>
+              </div>
+              <div class="reviews__item">
+                <div class="reviews__item-header">
+                  <div class="reviews__item-stars">
+                    <div class="stars stars--sm" data-rate="4">
+                      <div class="stars__rate">
+                        4.8
+                      </div>
+                      <div class="stars__view">
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                        <div class="stars__item">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                              stroke="#E0E0E0" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews__item-name">
+                    <span>Теплоход «Игорь Стравинский» </span>
+                  </div>
+                </div>
+                <div class="reviews__item-rating">
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Чистота
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Программа тура
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Сервис и питание
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Экскурсии
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 90%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">4.5</div>
+                  </div>
+                  <div class="reviews__rate">
+                    <div class="reviews__rate-title">
+                      Экипаж
+                    </div>
+                    <div class="reviews__rate-line">
+                      <div class="reviews__rate-line__inner" style="width: 100%;">
+
+                      </div>
+                    </div>
+                    <div class="reviews__rate-rate">5.0</div>
+                  </div>
+                </div>
+                <div class="reviews__item-author">
+                  <div class="reviews__item-author__avatar">
+                    <img src="img/icons/avatar.svg" alt="">
+                  </div>
+                  <div class="reviews__item-author__body">
+                    <div class="reviews__item-author__name">Тимофей</div>
+                    <div class="reviews__item-author__date">31 января 2022</div>
+                  </div>
+                </div>
+                <h3 class="reviews__item-title">Лучший круиз в моей жизни</h3>
+                <p class="reviews__item-text"><span class="text-hidden text-hidden--grey">Отдыхали на теплоходе с 25 мая
+                    по 7 июня,все очень понравилось. Кухня
+                    великолепная, хочу выразить благодарность Елене Рожновой, она нас обслуживала на протяжении всего
+                    круиза,очень приятная и добрая девушка. Желаю ей успехов и радости в жизни. Очень талантливы Сергей
+                    Писарев и Илья Гончаров, просто виртуозы своего дела, наслаждались исполнением ежедневно. Удачи им и
+                    процветания.Особенно хочу выразить восторг Юлии Самусевич, ее исполнение великолепно. Ее голос
+                    великолепен, <span class="text-hidden-bg"></span><span class="text-hidden-inner"> ее харизма очаровывает.Творческих успехов в исполнении
+                      и создании новых песен.</span></span>
+                  <a href="#" class="read__more">Читать далее</a>
+                </p>
+                <div class="reviews__item-photos">
+                  <a href="#" class="reviews__item-photos__item">
+                    <img src="img/rivers/item1.jpg" alt="">
+                  </a>
+                  <a href="#" class="reviews__item-photos__item">
+                    <img src="img/rivers/item2.jpg" alt="">
+                  </a>
+                  <a href="#" class="reviews__item-photos__item">
+                    <img src="img/rivers/item3.jpg" alt="">
+                  </a>
+                </div>
+                <div class="reviews__item-footer">
+                  <a href="#" class="reviews__reply link link--bold link--blue link--underline">Ответить</a>
+                  <div class="reviews__item-rate">
+                    <a href="#" class="reviews__item-rate__up">
+                      <img src="img/icons/thumbsup.svg" alt="">
+                      <span>11</span>
+                    </a>
+                    <a href="#" class="reviews__item-rate__down">
+                      <img src="img/icons/thumbsdown.svg" alt="">
+                      <span>3</span>
+                    </a>
+                  </div>
+                </div>
+                <form class="reviews__item-form form">
+                  <input type="text" class="input" placeholder="Введите имя">
+                  <input type="text" class="input" placeholder="Введите e-mail">
+                  <textarea class="textfield" placeholder="Напишите комментарий"></textarea>
+                  <label class="check-wrap">
+                    <input type="checkbox" class="check-wrap__inp" required>
+                    <span class="check-wrap__check"></span>
+                    <span class="check-wrap__text">Соглашаюсь на обработку моих персональных данных в соответствии с
+                      Политикой конфиденциальности и принимаю условия Пользовательского соглашения</span>
+                  </label>
+                  <button class="btn btn--blue">Оставить комментарий</button>
+                </form>
+              </div>
+            </div>
+            <div class="feedback">
+              <h2 class="feedback__title">Оставить отзыв о круизной компании Донинтурфлот </h2>
+              <p class="feedback__hint">Выберите теплоход компании:</p>
+              <div class="feedback__pick">
+                <div class="feedback__pick-show feedback__pick-item">
+                  <div class="feedback__pick-item__title">
+                    Сергей Есенин
+                  </div>
+                  <div class="feedback__pick-item__img">
+                    <img src="img/icons/empty.svg" alt="">
+                  </div>
+                  <div class="feedback__pick-item__toggle">
+                    <img src="img/icons/chevron-down.svg" alt="">
+                  </div>
+                </div>
+                <div class="feedback__pick-list">
+                  <div class="feedback__pick-item">
+                    <div class="feedback__pick-item__title">
+                      Сергей Есенин
+                    </div>
+                    <div class="feedback__pick-item__img">
+                      <img src="img/icons/empty.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="feedback__pick-item">
+                    <div class="feedback__pick-item__title">
+                      Сергей Есенин
+                    </div>
+                    <div class="feedback__pick-item__img">
+                      <img src="img/icons/empty.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="feedback__pick-item">
+                    <div class="feedback__pick-item__title">
+                      Сергей Есенин
+                    </div>
+                    <div class="feedback__pick-item__img">
+                      <img src="img/icons/empty.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <form class="form feedback__form">
+                <p class="form__hint">Имя</p>
+                <input type="text" class="input" placeholder="Введите имя">
+                <p class="form__hint">E-mail</p>
+                <input type="text" class="input" placeholder="Введите e-mail">
+                <p class="form__hint">Ваше общее впечатление (от 1 до 15 слов)</p>
+                <input type="text" class="input">
+                <p class="form__hint">Отзыв</p>
+                <textarea class="textfield"></textarea>
+                <label class="file">
+                  <div class="file__inner">
+                    <img src="img/icons/attach.svg" alt="">
+                    <span>Прикрепить фотографии</span>
+                  </div>
+                  <input type="file" class="file__inp">
+                </label>
+                <div class="feedback__form-photos">
+                  <p class="feedback__form-photos__hint">Загружено 3 фотографии:</p>
+                  <div class="feedback__form-photos__inner">
+                    <div class="feedback__form-photos__item">
+                      <a href="#" class="feedback__form-photos__remove">Удалить</a>
+                      <img src="img/rivers/item1.jpg" alt="">
+                    </div>
+                    <div class="feedback__form-photos__item">
+                      <a href="#" class="feedback__form-photos__remove">Удалить</a>
+                      <img src="img/rivers/item1.jpg" alt="">
+                    </div>
+                    <div class="feedback__form-photos__item">
+                      <a href="#" class="feedback__form-photos__remove">Удалить</a>
+                      <img src="img/rivers/item1.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feedback__rate">
+                  <h3 class="feedback__rate-title">Поставьте оценки:</h3>
+                  <div class="feedback__rate-item">
+                    <div class="feedback__rate-hint">
+                      Чистота
+                    </div>
+                    <div class="feedback__rate-body">
+                      <div class="stars stars--hover stars--lg" data-rate="4">
+                        <div class="stars__view">
+                          <div class="stars__item" data-rate="1">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="2">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="3">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="4">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="5">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feedback__rate-item">
+                    <div class="feedback__rate-hint">
+                      Сервис и питание
+                    </div>
+                    <div class="feedback__rate-body">
+                      <div class="stars stars--hover stars--lg" data-rate="4">
+                        <div class="stars__view">
+                          <div class="stars__item" data-rate="1">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="2">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="3">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="4">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="5">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feedback__rate-item">
+                    <div class="feedback__rate-hint">
+                      Экипаж
+                    </div>
+                    <div class="feedback__rate-body">
+                      <div class="stars stars--hover stars--lg" data-rate="4">
+                        <div class="stars__view">
+                          <div class="stars__item" data-rate="1">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="2">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="3">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="4">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="5">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feedback__rate-item">
+                    <div class="feedback__rate-hint">
+                      Программа тура
+                    </div>
+                    <div class="feedback__rate-body">
+                      <div class="stars stars--hover stars--lg" data-rate="4">
+                        <div class="stars__view">
+                          <div class="stars__item" data-rate="1">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="2">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="3">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="4">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="5">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feedback__rate-item">
+                    <div class="feedback__rate-hint">
+                      Экскурсии
+                    </div>
+                    <div class="feedback__rate-body">
+                      <div class="stars stars--hover stars--lg" data-rate="4">
+                        <div class="stars__view">
+                          <div class="stars__item" data-rate="1">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="2">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="3">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="4">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                          <div class="stars__item" data-rate="5">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7 1.07149L8.69731 4.2885L8.81204 4.50594L9.05429 4.54786L12.6383 5.16799L10.1033 7.77634L9.93194 7.95265L9.96694 8.19599L10.4847 11.7963L7.22062 10.1913L7 10.0828L6.77938 10.1913L3.51531 11.7963L4.03306 8.19599L4.06806 7.95265L3.89671 7.77634L1.36165 5.16799L4.94571 4.54786L5.18796 4.50594L5.30269 4.2885L7 1.07149Z"
+                                stroke="#E0E0E0" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <label class="check-wrap">
+                  <input type="checkbox" class="check-wrap__inp" required>
+                  <span class="check-wrap__check"></span>
+                  <span class="check-wrap__text">Соглашаюсь на обработку моих персональных данных</span>
+                </label>
+                <button data-fancybox="dialog" data-src="#modal-done" class="btn btn--blue">Отправить отзыв</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__item">
+          <a href="#" class="logo logo--dark">
+            <div class="logo__img">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M30.63 18.5545C31.935 19.0795 32.745 20.6245 32.445 21.9895L31.83 24.7795C30.765 29.5795 27 32.9995 21.57 32.9995H14.43C8.99997 32.9995 5.23498 29.5795 4.16998 24.7795L3.55498 21.9895C3.25498 20.6245 4.06496 19.0795 5.36996 18.5545L7.49998 17.6995L15.765 14.3845C17.205 13.8145 18.795 13.8145 20.235 14.3845L28.5 17.6995L30.63 18.5545Z"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18 33V15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <g opacity="0.4">
+                  <path
+                    d="M28.5 12V17.7L20.235 14.385C18.795 13.815 17.205 13.815 15.765 14.385L7.5 17.7V12C7.5 9.525 9.525 7.5 12 7.5H24C26.475 7.5 28.5 9.525 28.5 12Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M21.75 7.5H14.25V4.5C14.25 3.675 14.925 3 15.75 3H20.25C21.075 3 21.75 3.675 21.75 4.5V7.5Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+            <span class="logo__text">
+              UniCruises
+            </span>
+          </a>
+          <nav class="footer__menu">
+            <a href="#">Акции</a>
+            <a href="#">О нас</a>
+            <a href="#">Контакты</a>
+            <a href="#">Отзывы о теплоходах</a>
+            <a href="#">Отзывы о круизных компаниях</a>
+            <a href="#">Написать в техподдержку</a>
+          </nav>
+        </div>
+        <div class="footer__item">
+          <span class="footer__header footer__ToggleMenu">Круизы по рекам</span>
+          <nav class="footer__menu footer__ToggledMenu">
+            <a href="#">по Волге</a>
+            <a href="#">по Каме</a>
+            <a href="#">по Оке</a>
+            <a href="#">по Волге</a>
+            <a href="#">по Оке</a>
+            <a href="#" class="footer__more">
+              <span>Все реки</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                  stroke="#001853" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+        <div class="footer__item">
+          <span class="footer__header footer__ToggleMenu">Круиз из города</span>
+          <nav class="footer__menu footer__ToggledMenu">
+            <a href="#">Москва</a>
+            <a href="#">Санкт-Петербург</a>
+            <a href="#">Казань</a>
+            <a href="#">Самара</a>
+            <a href="#">Казань</a>
+            <a href="#" class="footer__more">
+              <span>Все реки</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                  stroke="#001853" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+        <div class="footer__item">
+          <span class="footer__header footer__ToggleMenu">Теплоходы</span>
+          <nav class="footer__menu footer__ToggledMenu">
+            <a href="#">А.С.Пушкин</a>
+            <a href="#">Александр Грин</a>
+            <a href="#">Александр Грин</a>
+            <a href="#">Александр Грин</a>
+            <a href="#">Александр Грин</a>
+            <a href="#" class="footer__more">
+              <span>Все реки</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                  stroke="#001853" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+        <div class="footer__item">
+          <span class="footer__header footer__ToggleMenu">Круизные компании</span>
+          <nav class="footer__menu footer__ToggledMenu">
+            <a href="#">Мостурфлот</a>
+            <a href="#">ИнфоФлот</a>
+            <a href="#">ИнфоФлот</a>
+            <a href="#">ИнфоФлот</a>
+            <a href="#">ИнфоФлот</a>
+            <a href="#" class="footer__more">
+              <span>Все реки</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.8 5.9998L7.59999 2.7998M10.8 5.9998L7.59999 9.1998M10.8 5.9998H0.799988"
+                  stroke="#001853" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__copy">
+        <p>Copyright © 2016-2022. Все права защищены.</p>
+        <p>UniCruises — часть HolidayPrice Inc., европейского лидера в сфере онлайн-туризма и сопутствующих услуг.</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__info">
+          <nav class="footer__info-nav">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Пользовательское соглашение</a>
+            <a href="#">Карта сайта</a>
+          </nav>
+          <div class="footer__info-text">
+            <span>При использовании материалов активная ссылка на сайт UniCruises.com обязательна</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="js/nice-select2.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

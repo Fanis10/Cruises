@@ -1,0 +1,182 @@
+.footer {
+  background: $clWhite;
+  box-shadow: 0px 8px 32px rgba(0, 67, 101, 0.08);
+
+  &__bottom {
+    background: $clLightGrey;
+    padding: 32px 0;
+
+    @include respond-to("tablet") {
+      padding: 20px 0;
+    }
+  }
+
+  &__inner {
+    padding: 60px 0 36px;
+    gap: 50px;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+
+    @include respond-to("tablet-wide") {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    @include respond-to("tablet") {
+      padding: 30px 0;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &:not(:first-child) {
+      padding-top: 10px;
+
+      @include respond-to("tablet-wide") {
+        padding-top: 0;
+      }
+    }
+
+    .logo {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__header {
+    font-weight: $font-weight-semibold;
+    font-size: $szFontRegular;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: $clBlue;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    height: 100%;
+    padding: 12px 0;
+    @include respond-to("tablet-wide") {
+      padding-left: 40px;
+    }
+    a {
+      font-weight: $font-weight-primary;
+      font-size: 14px;
+      line-height: 19px;
+      color: $clBlack;
+    }
+  }
+
+  &__more {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: auto;
+
+    span {
+      font-weight: $font-weight-bold;
+      font-size: $szFontSmall;
+      line-height: 120%;
+      color: $clBlue;
+    }
+  }
+
+  &__ToggleMenu {
+    @include respond-to("tablet-wide") {
+      position: relative;
+      &:after {
+        @include pseudo();
+        height: 12px;
+        width: 12px;
+        top: 50%;
+        right: 0;
+        margin-top: -6px;
+        background: url("../img/icons/chevron-down.svg") no-repeat center;
+        background-size: contain;
+        transition: all 0.3s ease;
+      }
+      &.active {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__ToggledMenu {
+    @include respond-to("tablet-wide") {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      &.active {
+        max-height: 100%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+    }
+  }
+
+  &__copy {
+    font-weight: $font-weight-primary;
+    font-size: $szFontLight;
+    line-height: 150%;
+    color: $clTextGrey;
+    padding: 20px 0;
+    border-top: 1px solid $clDarkGrey;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    @include respond-to("tablet-wide") {
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    &-nav {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 50px;
+
+      @include respond-to("tablet-wide") {
+        gap: 12px;
+      }
+
+      @include respond-to("tablet-wide") {
+        flex-direction: column;
+      }
+
+      a {
+        font-weight: $font-weight-primary;
+        font-size: $szFontSmall;
+        line-height: 150%;
+        color: $clTextGrey;
+      }
+    }
+
+    &-text {
+      font-weight: $font-weight-primary;
+      font-size: $szFontSmall;
+      line-height: 150%;
+      color: $clTextGrey;
+      text-align: right;
+
+      @include respond-to("tablet-wide") {
+        text-align: center;
+      }
+
+      @include respond-to("mobile") {
+        font-size: 9px;
+      }
+    }
+  }
+}

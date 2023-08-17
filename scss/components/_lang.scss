@@ -1,0 +1,88 @@
+.lang {
+  position: relative;
+  cursor: pointer;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 7px;
+    pointer-events: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .lang__hint {
+      color: $clBlack;
+    }
+  }
+
+  &__icon {
+    height: 15px;
+    width: 21px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__hint {
+    font-weight: $font-weight-light;
+    font-size: 15px;
+    line-height: 120%;
+    color: #FFFFFF;
+  }
+
+  &:after {
+    @include pseudo();
+    height: 12px;
+    width: 12px;
+    right: 0;
+    top: 50%;
+    margin-top: -6px;
+    background: url("../img/icons/chevron-down-white.svg") no-repeat center;
+    background-size: contain;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+
+
+  &__toggle {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 130%;
+    background: #F3F3F3;
+    box-shadow: 0px 2px 4px rgba(0, 24, 83, 0.08);
+    padding: 10px;
+    gap: 7px;
+    flex-direction: column;
+    display: none;
+  }
+
+  &.active {
+    &:after {
+      transform: rotate(180deg);
+    }
+
+    .lang__toggle {
+      display: flex;
+    }
+  }
+
+  &--dark {
+    .lang__hint {
+      color: $clBlack;
+    }
+
+    &:after {
+      filter: invert(1)
+    }
+  }
+}
